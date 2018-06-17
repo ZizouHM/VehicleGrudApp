@@ -60,4 +60,33 @@ public class IserviceCar implements CarService {
 		return deletedCar;
 	}
 
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+	public List<Car> findcarByModel(String description) {
+		return carrepository.getCarByModel(description);
+	}
+
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+	public List<Car> findcarByMotor(String description) {
+		return carrepository.getCarByMotor(description);
+	}
+
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+	public List<Car> findcarByCarMarker(String description) {
+		return carrepository.getCarByCarMarker(description);
+	}
+
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+	public List<Car> findcarByMileage(String description) {
+		return carrepository.getCarByMileage(description);
+	}
+
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+	public List<Car> findcarByColor(String description) {
+		return carrepository.getCarByColor(description);
+	}
 }

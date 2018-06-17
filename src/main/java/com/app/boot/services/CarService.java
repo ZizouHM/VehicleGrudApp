@@ -18,4 +18,13 @@ public interface CarService {
 
 	public Car findById(Long id);
 
+	public List<Car> findcarByModel(String description);
+
+	public List<Car> findcarByMotor(String description);
+
+	public List<Car> findcarByMileage(String description);
+
+	public List<Car> findcarByCarMarker(String description);
+
+	public List<Car> findcarByColor(String description);
 }

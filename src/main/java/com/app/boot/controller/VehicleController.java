@@ -111,6 +111,60 @@ public class VehicleController {
 
 	}
 
+	@ResponseBody
+	@GetMapping(value = "car/{id}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public ResponseEntity<Car> getCarById(@PathVariable("id") Long id) {
+		Car car = this.iservcieCar.findById(id);
+		return ResponseEntity.status(HttpStatus.OK).body(car);
+
+	}
+
+	@ResponseBody
+	@GetMapping(value = "car/model/{description}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public ResponseEntity<List<Car>> getCarByModel(@PathVariable("description") String description) {
+		List<Car> cars = this.iservcieCar.findcarByModel(description);
+		return ResponseEntity.status(HttpStatus.OK).body(cars);
+
+	}
+
+	@ResponseBody
+	@GetMapping(value = "car/color/{description}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public ResponseEntity<List<Car>> getCarByColor(@PathVariable("description") String description) {
+		List<Car> cars = this.iservcieCar.findcarByColor(description);
+		return ResponseEntity.status(HttpStatus.OK).body(cars);
+
+	}
+
+	@ResponseBody
+	@GetMapping(value = "car/carmarker/{description}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public ResponseEntity<List<Car>> getMotoByCarMarker(@PathVariable("description") String description) {
+		List<Car> cars = this.iservcieCar.findcarByCarMarker(description);
+		return ResponseEntity.status(HttpStatus.OK).body(cars);
+
+	}
+
+	@ResponseBody
+	@GetMapping(value = "car/motor/{description}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public ResponseEntity<List<Car>> getCarByMotor(@PathVariable("description") String description) {
+		List<Car> cars = this.iservcieCar.findcarByMotor(description);
+		return ResponseEntity.status(HttpStatus.OK).body(cars);
+
+	}
+
+	@ResponseBody
+	@GetMapping(value = "car/mileage/{description}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public ResponseEntity<List<Car>> getCarByMileage(@PathVariable("description") String description) {
+		List<Car> cars = this.iservcieCar.findcarByMileage(description);
+		return ResponseEntity.status(HttpStatus.OK).body(cars);
+
+	}
+
 	// Moto Contorller
 
 	/**
@@ -176,6 +230,51 @@ public class VehicleController {
 		}
 
 		return ResponseEntity.ok(deledtedMoto);
+
+	}
+
+	@ResponseBody
+	@GetMapping(value = "moto/model/{description}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public ResponseEntity<List<Moto>> getMotoByModel(@PathVariable("description") String description) {
+		List<Moto> motos = this.iserviceMoto.findmotoByModel(description);
+		return ResponseEntity.status(HttpStatus.OK).body(motos);
+
+	}
+
+	@ResponseBody
+	@GetMapping(value = "moto/color/{description}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public ResponseEntity<List<Moto>> getMotoByColor(@PathVariable("description") String description) {
+		List<Moto> motos = this.iserviceMoto.findmotoByColor(description);
+		return ResponseEntity.status(HttpStatus.OK).body(motos);
+
+	}
+
+	@ResponseBody
+	@GetMapping(value = "moto/assembler/{description}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public ResponseEntity<List<Moto>> getMotoByAssembler(@PathVariable("description") String description) {
+		List<Moto> motos = this.iserviceMoto.findmotoByAssembler(description);
+		return ResponseEntity.status(HttpStatus.OK).body(motos);
+
+	}
+
+	@ResponseBody
+	@GetMapping(value = "moto/motor/{description}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public ResponseEntity<List<Moto>> getMotoByMotor(@PathVariable("description") String description) {
+		List<Moto> motos = this.iserviceMoto.findmotoByMotor(description);
+		return ResponseEntity.status(HttpStatus.OK).body(motos);
+
+	}
+
+	@ResponseBody
+	@GetMapping(value = "moto/mileage/{description}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public ResponseEntity<List<Moto>> getMotoByMileage(@PathVariable("description") String description) {
+		List<Moto> motos = this.iserviceMoto.findmotoByMileage(description);
+		return ResponseEntity.status(HttpStatus.OK).body(motos);
 
 	}
 

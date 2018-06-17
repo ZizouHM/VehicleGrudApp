@@ -62,4 +62,34 @@ public class IserviceMoto implements MotoService {
 
 	}
 
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+	public List<Moto> findmotoByModel(String description) {
+		return motoRepository.getMotoByModel(description);
+	}
+
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+	public List<Moto> findmotoByMotor(String description) {
+		return motoRepository.getMotoByMotor(description);
+	}
+
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+	public List<Moto> findmotoByAssembler(String description) {
+		return motoRepository.getMotoByAssembler(description);
+	}
+
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+	public List<Moto> findmotoByMileage(String description) {
+		return motoRepository.getMotoByMileage(description);
+	}
+
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+	public List<Moto> findmotoByColor(String description) {
+		return motoRepository.getMotoByColor(description);
+	}
+
 }
