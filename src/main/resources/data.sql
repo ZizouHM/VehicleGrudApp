@@ -1,10 +1,10 @@
 INSERT INTO 'assembler'('description') VALUES ('Ducati')
 INSERT INTO 'assembler'('description') VALUES ('Yamaha')
-INSERT INTO 'assembler'('description') VALUES ('Yamaha')
-
-INSERT INTO 'assembler'('description') VALUES ('Chevrolet')
-INSERT INTO 'assembler'('description') VALUES ('Ford')
 INSERT INTO 'assembler'('description') VALUES ('Honda')
+
+INSERT INTO 'car_maker'('description') VALUES ('Chevrolet')
+INSERT INTO 'car_maker'('description') VALUES ('Ford')
+INSERT INTO 'car_maker'('description') VALUES ('Honda')
 
 
 INSERT INTO 'model '('description') VALUES ('Burgman')
